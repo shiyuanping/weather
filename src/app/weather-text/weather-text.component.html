@@ -1,0 +1,9 @@
+<div class="textBox">
+    <div class="weather">
+        {{data.now}}<span *ngIf="data.now !== data.next && data.now !== '晴间多云'">转</span><span *ngIf="data.now !== data.next && data.now !== '晴间多云'">{{data.next}}</span>
+    </div>
+    <div class="temperature">  
+        <span class="numb">{{data.tmp_min}}<span class="wave" *ngIf="data.tmp_min">~</span>{{data.tmp_max}}</span>
+        <span *ngIf="data.tmp_min" class="icon-temperature size"></span>
+    </div>
+</div>

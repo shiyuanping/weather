@@ -1,0 +1,17 @@
+/* 自定义图标大小 */
+.cal-day-badge{
+  margin-top: 0;
+  margin-left: 3px;
+  background-color: transparent;
+  padding: 0px 4px;
+  
+}
+.cal-day-number {
+  /* font-size: 1.2em;
+  font-weight: 400;
+  opacity: 0.5; */
+  margin-top: 1px;
+  margin-right: 5px;
+  float: right;
+  margin-bottom: 0;
+ }

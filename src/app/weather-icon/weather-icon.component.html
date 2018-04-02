@@ -1,0 +1,25 @@
+<span *ngIf="data.now === '晴'" class="icon-sunny size">
+    <span class="path1"></span><span class="path2"></span>
+</span>
+
+<span *ngIf="data.now === '多云' || data.now === '晴间多云'" class="icon-cloudy size">
+    <span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span>
+</span>
+
+<span *ngIf="data.now === '阴天'" class="icon-overcast"></span>
+
+<span *ngIf="data.now === '阵雨'" class="icon-shower"></span>
+
+<span *ngIf="data.now === '雷阵雨'" class="icon-thumder-shower"></span>
+
+<span *ngIf="data.now === '小雨' || data.now === '毛毛雨/细雨'" class="icon-light-rain"></span>
+
+<span *ngIf="data.now === '中雨'" class="icon-moderate-rain"></span>
+
+<span *ngIf="data.now === '大雨'" class="icon-heavy-rain"></span>
+
+<span *ngIf="data.now === '暴雨'" class="icon-rainstorm"></span>
+
+<span *ngIf="data.now === '大暴雨'" class="icon-downpour"></span>
+
+<span *ngIf="data.now === '特大暴雨'" class="icon-extra-heavy-rain"></span>

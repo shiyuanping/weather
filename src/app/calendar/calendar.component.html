@@ -1,0 +1,62 @@
+<div class="row text-center">
+    <div class="col-md-4">
+        <nz-radio-group [(ngModel)]="size">
+            <label nz-radio-button>
+                <div 
+                class="btn btn-primary"
+                mwlCalendarPreviousView
+                [view]="view"
+                [(viewDate)]="viewDate"
+                (viewDateChange)="activeDayIsOpen = false">
+                上一个月
+                </div>
+            </label>
+            <label nz-radio-button>
+                <div
+                class="btn btn-outline-secondary"
+                mwlCalendarToday
+                [(viewDate)]="viewDate">
+                今天
+                </div>
+            </label>
+            <label nz-radio-button>
+                <div
+                class="btn btn-primary"
+                mwlCalendarNextView
+                [view]="view"
+                [(viewDate)]="viewDate"
+                (viewDateChange)="activeDayIsOpen = false">
+                下一个月
+                </div>
+            </label>
+        </nz-radio-group>
+    </div>
+    <div class="col-md-4">
+        <h3>{{ viewDate | calendarDate:(view + 'ViewTitle'):'zh' }}</h3>
+    </div>
+   
+  </div>
+
+
+
+<div style="width:600px;">
+    <ng-template #customCellTemplate let-day="day" let-locale="locale">
+        <div class="cal-cell-top">
+            <span class="cal-day-badge">
+                <app-weather-icon [data]="weatherData(day.date)"></app-weather-icon>
+            </span>
+            <span class="cal-day-number">{{ day.date | calendarDate:'monthViewDayNumber':locale }}</span>
+            <app-weather-text [data]="weatherData(day.date)"></app-weather-text>
+        </div>
+    </ng-template>
+
+    <div [ngSwitch]="view">
+        <mwl-calendar-month-view
+            *ngSwitchCase="'month'"
+            [viewDate]="viewDate"
+            [events]="events"
+            [locale]="locale"
+            [cellTemplate]="customCellTemplate">
+        </mwl-calendar-month-view>
+    </div>
+</div>
